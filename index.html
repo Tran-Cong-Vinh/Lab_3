@@ -3,138 +3,265 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab_3</title>
+    <title>Lab1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f6f9fc;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding:0px 50px;
+            background-color: #fff;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #222;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 50px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #222;
+            font-size: 15px;
+            padding: 40px 10px;
+        }
+        nav ul li a:hover {
+          background: #ddd;
+        }
+        .menu-lab {
+            padding: 40px 10px;
+            list-style: none;
+            display: inline-block;
+            position: relative;
+        }
+        .menu-lab:hover {
+          background: #ddd;
+          cursor: pointer;
+        }
+        .auth-buttons a {
+            margin-left: 20px;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid #00c1a1;
+            color: #00c1a1;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .auth-buttons a.signup {
+            background-color: #00c1a1;
+            color: #fff;
+        }
+
+        /* Style for login/signup section */
+        .auth-container {
+            max-width: 500px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .tab {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .tab button {
+            background-color: #f6f9fc;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .tab button.active {
+            border-bottom: 2px solid #00c1a1;
+            font-weight: bold;
+        }
+
+        .form-container {
+            display: none;
+        }
+
+        .form-container.active {
+            display: block;
+        }
+
+        .form-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #00c1a1;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color: #009688;
+        }
+        .nav-menu {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+            
+        }
+        .img-logo {
+            height: 50px;
+            width: 50px;
+        }
+        .img-logo img {
+            width: 100%;
+            height: 100%;
+        }
+        .body-login{
+            width: 400px;
+            margin: auto;
+            background: #fff;
+            margin-top: 100px;
+            padding: 40px;
+            border-radius: 5px;
+            box-shadow: 0 0 4px #ccc;
+        }
+        .input-name {
+            padding-bottom: 30px;
+        }
+        .item-input {
+            display: flex;
+            gap: 5px;
+            border-bottom: 1px solid #333;
+            padding-top: 5px;
+        }
+        .font-login {
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+        .input-name input {
+            height: 30px;
+            width: calc(100% - 10px);
+            border: none;
+            padding: 0 5px;
+        }
+        .btn-login {
+            height: 40px;
+            border: none;
+            font-size: 18px;
+            width: 100%;
+            border-radius: 20px;
+            background: linear-gradient(to right, #0000CD, #FF4500);
+            margin-top: 20px;
+            color: #fff;
+        }
+        .register {
+            padding-top: 20px;
+            text-align: center;
+        }
+        .lab-in-lab {
+            display: none;
+            position: absolute;
+            width: 150px;
+            background: #f1f1f1;
+            padding: 20px;
+            z-index: 1;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            top: 100%;
+            left: -10%;
+        }
+        .menu-lab:hover .lab-in-lab {
+            display: block;
+        }
+        .lab-in-lab a {
+            display: block;
+            padding: 5px 0;
+            text-decoration: none;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
-    <div class="header">
-        <h1>Avaiable Material</h1>
-    </div>
-    <div class="body-sbj">
-        <div class="subject">
-            <div class="img">
-                <img src="/img/logo-javascript-2.png" alt="">
+
+    <header>
+        <nav class="nav-menu">
+            <div class="img-logo">
+                <img src="./images/logo.png" alt="">
             </div>
-            <div class="name-sbj">
-                <p>JavaScript</p>
-            </div>
-            <a class="btn" href="./subject/js.html">
-                View Materials
-            </a>
-        </div>
-            <div class="subject">
-                <div class="img">
-                    <img src="/img/java-svgrepo-com.svg" alt="">
-                </div>
-                <div class="name-sbj">
-                    <p>Java</p>
-                </div>
-                <a class="btn" href="./subject/java.html">
-                    View Materials
-                </a>
-            </div>
-            <div class="subject">
-                <div class="img">
-                    <img src="/img/09f5d225-fe09-47d0-beba-1e03e8d57241.avif" alt="">
+            <ul>
+                <li><a href="./">Home</a></li>
+                <li><a href="./about">About</a></li>
+                
+                <!-- <li><a href="./lab">Labs</a></li> -->
+                
+            </ul>
+            <div class="menu-lab">
+                <li>Labs</li>
+                 <div class="lab-in-lab">
+                     <a href="./index.html">Lab 1</a>
+                     <a href="./lab2/lab2/index.html">Lab 2</a>
+                     <a href="./Lab_3/index.html">Lab 3</a>
+                     <a href="./lab4/index.html">Lab 4</a>
+                     <a href="./Lab5/index.html">Lab 5</a>
                  </div>
-                 <div class="name-sbj">
-                     <p>C++</p>
-                 </div>
-                 <a class="btn" href="./subject/c++.html">
-                    View Materials
-                 </a>
              </div>
-             <div class="subject">
-                <div class="img">
-                    <img src="/img/python-svgrepo-com.svg" alt="">
+        </nav>
+        
+    </header>
+    <div>
+        <div class="body-login">
+            <div class="font-login">Login</div>
+            <div class="input-name">
+                <div>User name</div>
+                <div class="item-input">
+                    <img src="./images/user.svg" alt="">
+                    <input type="text">
                 </div>
-                <div class="name-sbj">
-                    <p>Python</p>
-                </div>
-                <a class="btn" href="./subject/python.html">
-                    View Materials
-                </a>
             </div>
-                <div class="subject">
-                    <div class="img">
-                        <img src="/img/html-5-logo-svgrepo-com.svg" alt="">
-                    </div>
-                    <div class="name-sbj">
-                        <p>HTML</p>
-                    </div>
-                    <a class="btn" href="./subject/html.html">
-                        View Materials
-                    </a>
+            <div class="input-name">
+                <div>Password</div>
+                <div class="item-input">
+                    <img src="./images/lock.svg" alt="">
+                    <input type="text">
                 </div>
-                <div class="subject">
-                    <div class="img">
-                        <img src="/img/R.png" alt="">
-                     </div>
-                     <div class="name-sbj">
-                         <p>Ruby</p>
-                     </div>
-                     <a class="btn" href="./subject/ruby.html">
-                        View Materials
-                    </a>
-                 </div>
-            
+            </div>
+            <button class="btn-login">Login</button>
+            <div class="register">Register an account <a href="/register">here</a></div>
+        </div>
     </div>
+
 </body>
 </html>
-<style>
-    .header {
-    text-align: center;
-    font-family: math;
-    letter-spacing: 6px;
-    font-size: 30px;
-    background: #ffffff;
-    box-shadow: 0 0 1px;
-    border-radius: 10px;
-    }
-    .subject {
-        width: calc(100% / 3 - 76px);
-        background: #ffffff;
-        box-shadow: 0 0 1px;
-        padding: 30px;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-        margin-bottom: 20px;
-        text-align: center;
-    }
-    .img img {
-        width: 80px  
-    }
-    .name-sbj {
-        font-size: 30px;
-    }
-    .body-sbj {
-        display: flex;
-        width: 100%;
-        gap: 20px;
-        flex-wrap: wrap;
-
-    }
-    body {
-        background: #f2f4f7;
-    }
-    .subject .btn {
-    font-size: 15px;
-    padding: 10px 40px;
-    width: fit-content;
-    margin: auto;
-    border: 1px solid;
-    background: #ffffff;
-    border-radius: 5px;
-    }
-    .subject .btn {
-        text-decoration: none;
-        color: #333;
-
-    }
-    .btn:hover {
-        cursor: pointer;
-    }
-    .subject:hover {
-        transform: translate(4px, -4px);
-        box-shadow: 9px 9px 0 #ccc;
-    }
-</style>
